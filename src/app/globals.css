@@ -1,6 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
+
+  --color-primary: #0e1112;
+  --color-grey: #484b4b;
+  --color-accent: #eef7f9;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1192px;
+}
 
 @layer base {
   body {

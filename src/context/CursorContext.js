@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect, createContext } from 'react';
 
 // create context
@@ -9,7 +10,16 @@ const CursorProvider = ({ children }) => {
   // cursor background state
   const [cursorBG, setCursorBG] = useState('default');
 
-  const mobileViewportIsActive = window.innerWidth < 768;
+  const [mobileViewportIsActive, setMobileViewportIsActive] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setMobileViewportIsActive(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (!mobileViewportIsActive) {
@@ -27,7 +37,6 @@ const CursorProvider = ({ children }) => {
     } else {
       setCursorBG('none');
     }
-    // console.log(cursorPos);
   }, [mobileViewportIsActive]);
 
   const cursorVariants = {

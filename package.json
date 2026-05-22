@@ -3,19 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^14.3.1",
-    "@testing-library/user-event": "^14.6.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
+    "@tailwindcss/postcss": "^4.3.0",
+    "next": "^16.2.6",
+    "postcss": "^8.5.15",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "web-vitals": "^3.5.2"
   },
   "scripts": {
-    "start": "cross-env NODE_OPTIONS=--no-experimental-webstorage react-scripts start",
-    "build": "cross-env NODE_OPTIONS=--no-experimental-webstorage react-scripts build",
-    "test": "cross-env NODE_OPTIONS=--no-experimental-webstorage react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "eslintConfig": {
     "extends": [
@@ -37,10 +36,8 @@
   },
   "devDependencies": {
     "cross-env": "^10.1.0",
-    "framer-motion": "^10.18.0",
+    "framer-motion": "^12.40.0",
     "react-icons": "^4.12.0",
-    "react-router-dom": "^6.30.3",
-    "react-scroll": "^1.9.3",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^4.3.0"
   }
 }

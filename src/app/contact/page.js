@@ -1,10 +1,12 @@
+'use client';
 import { useContext } from 'react';
-import WomanImg from '../img/contact/woman.png';
+import Image from 'next/image';
+import WomanImg from '../../img/contact/woman.png';
 import { motion } from 'framer-motion';
-import { transition1 } from '../transitions';
-import { CursorContext } from '../context/CursorContext';
+import { transition1 } from '../../transitions';
+import { CursorContext } from '../../context/CursorContext';
 
-const Contact = () => {
+export default function Contact() {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
     <motion.section
@@ -12,10 +14,10 @@ const Contact = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: '100%' }}
       transition={transition1}
-      className='section bg-white'
+      className='section relative'
     >
       <div className='container mx-auto h-full'>
-        <div className='flex flex-col lg:flex-row h-full items-center justify-start pt-36 gap-x-8 text-center lg:text-left'>
+        <div className='flex flex-col lg:flex-row h-full items-center justify-start lg:justify-center pt-36 lg:pt-0 gap-x-8 text-center lg:text-left'>
           {/* bg */}
           <motion.div
             initial={{ opacity: 0, y: '-100%' }}
@@ -63,15 +65,13 @@ const Contact = () => {
             initial={{ opacity: 0, y: '100%' }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '100%' }}
-            transition={{ transition: transition1, duration: 1.5 }}
+            transition={{ ...transition1, duration: 1.5 }}
             className='lg:flex-1'
           >
-            <img src={WomanImg} alt='' />
+            <Image src={WomanImg} alt='contact woman' priority />
           </motion.div>
         </div>
       </div>
     </motion.section>
   );
-};
-
-export default Contact;
+}

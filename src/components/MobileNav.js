@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+'use client';
+import { useState } from 'react';
+import Link from 'next/link';
 // imported icons
 import { IoMdClose } from 'react-icons/io';
 import { CgMenuRight } from 'react-icons/cg';
@@ -17,14 +18,13 @@ const MobileNav = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <nav>
+    <nav className="text-primary xl:hidden">
       {/* nav open button */}
       <div
         onClick={() => setOpenMenu(true)}
-        // onClick={() => setOpenMenu(!openMenu)}
-        className="xl:hidden text-3xl cursor-pointer ml-4"
+        className="text-3xl cursor-pointer"
       >
-        <CgMenuRight className="pr-1" />
+        <CgMenuRight />
       </div>
       {/* menu */}
       <motion.div
@@ -43,16 +43,16 @@ const MobileNav = () => {
         {/* menu list */}
         <ul className="h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl">
           <li>
-            <Link to="/">Home</Link>
+            <Link onClick={() => setOpenMenu(false)} href="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link onClick={() => setOpenMenu(false)} href="/about">About</Link>
           </li>
           <li>
-            <Link to="/portfolio">Portfolio</Link>
+            <Link onClick={() => setOpenMenu(false)} href="/portfolio">Portfolio</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link onClick={() => setOpenMenu(false)} href="/contact">Contact</Link>
           </li>
         </ul>
       </motion.div>
