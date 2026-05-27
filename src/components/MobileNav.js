@@ -66,6 +66,11 @@ const MobileNav = () => {
             </Link>
           </li>
           <li>
+            <Link onClick={() => setOpenMenu(false)} href='/faq'>
+              FAQs
+            </Link>
+          </li>
+          <li>
             <Link onClick={() => setOpenMenu(false)} href='/contact'>
               Contact
             </Link>
