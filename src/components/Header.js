@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import Socials from './Socials';
-import LogoAleftina from '../img/header/Color logo - no background.svg';
+import LogoAleftina from '../img/logo/aliviagordis-logo-transparent-capit.png';
 import MobileNav from './MobileNav';
 import { CursorContext } from '../context/CursorContext';
 
@@ -66,6 +66,12 @@ const Header = () => {
             className='text-grey hover:text-primary transition'
           >
             Portfolio
+          </Link>
+          <Link
+            href={'/faq'}
+            className='text-grey hover:text-primary transition'
+          >
+            FAQ
           </Link>
           <Link
             href={'/contact'}

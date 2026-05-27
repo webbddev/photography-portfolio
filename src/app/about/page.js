@@ -28,7 +28,6 @@ export default function About() {
         {/* text & img wrapper */}
         <div className='flex flex-col lg:flex-row items-center justify-center gap-y-12 md:gap-y-16 lg:gap-x-12 xl:gap-x-16 3xl:gap-x-28 text-center lg:text-left mx-auto max-w-4xl lg:max-w-5xl xl:max-w-7xl 3xl:max-w-[90rem] 4xl:max-w-[110rem]'>
           {/* image container */}
-          {/* Widened mobile/tablet widths using w-full and responsive md:max-w thresholds */}
           <div className='w-full lg:w-1/2 max-w-md md:max-w-2xl lg:max-w-md xl:max-w-lg 2xl:max-w-xl 3xl:max-w-2xl 4xl:max-w-4xl order-2 lg:order-0 overflow-hidden shadow-sm rounded-sm'>
             <Image
               src={WomanImg}
@@ -48,18 +47,22 @@ export default function About() {
           >
             <h1 className='h1'>About me</h1>
 
-            {/* Widened text section with max-w-xl and md:max-w-2xl for tablets */}
             <p className='mb-8 md:mb-12 max-w-md md:max-w-2xl lg:max-w-md xl:max-w-lg 2xl:max-w-xl 3xl:max-w-2xl 2xl:text-[20px] 3xl:text-[24px] 4xl:text-[28px] leading-relaxed text-gray-700 text-base md:text-lg lg:text-base'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.{' '}
-              <b> Enim nobis aspernatur amet quae.</b> Nemo quia assumenda,
-              voluptatibus deleniti porro tempore officia quas molestias ex,
-              quae, quaerat quidem. Accusantium, autem inventore!
+              I believe that a great photograph is more than just a
+              well-composed shot; it’s a captured feeling, a fleeting moment
+              frozen in time. My journey with photography started with a simple
+              fascination: how light interacts with human emotion.{' '}
+              <b>
+                Over the years, this fascination has grown into a lifelong
+                passion for visual storytelling and editorial portraiture.
+              </b>
               <br />
               <br />
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-              assumenda ipsum repudiandae quia nostrum quis nulla nisi alias
-              vero, ipsa obcaecati hic? Vel, possimus error consequuntur beatae
-              aliquid ratione ea!
+              My approach is deeply personal. I don’t just take pictures; I
+              collaborate with you to capture your authentic self. Whether it’s
+              a raw studio portrait, a dynamic fashion shoot, or a quiet
+              cinematic moment, my goal is always the same: to create timeless
+              imagery that speaks volumes without saying a word.
             </p>
 
             <Link

@@ -9,7 +9,7 @@ import WomanImg from '../img/home/woman.png';
 import { transition1 } from '../transitions';
 import { CursorContext } from '../context/CursorContext';
 
-const MotionImage = motion(Image);
+const MotionImage = motion.create(Image);
 
 export default function Home() {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
@@ -20,12 +20,11 @@ export default function Home() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={transition1}
-      /* Removed overflow-hidden and changed min-h-screen adjustments */
       className='w-full min-h-screen relative flex flex-col justify-between lg:block bg-white'
     >
       {/* TEXT SECTION */}
       <motion.div
-        initial={{ opacity: 0, y: '-50%' }}
+        initial={{ opacity: 0, y: '-70%' }}
         animate={{ opacity: 0.9, y: 0 }}
         exit={{ opacity: 0, y: '-50%' }}
         transition={transition1}
@@ -47,7 +46,7 @@ export default function Home() {
           content producer <br />& project manager
         </h1>
         <p className='text-[26px] lg:text-[36px] font-primary mb-4 lg:mb-12'>
-          Kishinev, MD
+          Tokyo, Japan
         </p>
         <Link href='/contact' className='btn mb-[30px]'>
           hire me

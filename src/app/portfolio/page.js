@@ -26,14 +26,14 @@ const NextJsImage = ({ slide, rect }) => {
   const height = Math.min(slide.height || Infinity, rect.height);
 
   return (
-    <div style={{ position: "relative", width, height }}>
+    <div style={{ position: 'relative', width, height }}>
       <Image
         src={slide.src}
-        alt={slide.alt || ""}
+        alt={slide.alt || ''}
         fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 70vw"
+        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 70vw'
         priority
-        className="object-contain"
+        className='object-contain'
       />
     </div>
   );
@@ -41,7 +41,7 @@ const NextJsImage = ({ slide, rect }) => {
 
 export default function Portfolio() {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
-  
+
   // Lightbox Control States
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -69,7 +69,6 @@ export default function Portfolio() {
     >
       <div className='container mx-auto relative px-6 md:px-12 lg:px-0'>
         <div className='flex flex-col lg:flex-row items-center justify-center gap-y-12 lg:gap-x-12 xl:gap-x-16 3xl:gap-x-28 text-center lg:text-left mx-auto max-w-4xl lg:max-w-5xl xl:max-w-[75rem] 3xl:max-w-[90rem] 4xl:max-w-[110rem] w-full'>
-          
           {/* TEXT CONTAINER */}
           <motion.div
             onMouseEnter={mouseEnterHandler}
@@ -82,10 +81,14 @@ export default function Portfolio() {
           >
             <h1 className='h1'>Portfolio</h1>
             <p className='mb-8 md:mb-12 max-w-md md:max-w-2xl lg:max-w-md xl:max-w-lg 2xl:max-w-xl 3xl:max-w-2xl 2xl:text-[20px] 3xl:text-[24px] 4xl:text-[28px] leading-relaxed text-gray-700 text-base md:text-lg lg:text-base'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.{' '}
-              <b> Enim nobis aspernatur amet quae.</b> Nemo quia assumenda,
-              voluptatibus deleniti porro tempore officia quas molestias ex,
-              quae, quaerat quidem. Accusantium, autem inventore!
+              A curated showcase of moments, moods, and visual narratives.{' '}
+              <b>
+                My work spans across editorial portraiture, contemporary
+                fashion, and lifestyle photography
+              </b>
+              , with a strong focus on natural light, clean aesthetics, and
+              genuine expressions. Each gallery tells a unique story of
+              connection, form, and character.
             </p>
             <Link
               href={'/contact'}
@@ -102,7 +105,7 @@ export default function Portfolio() {
             className='w-full lg:w-1/2 max-w-md md:max-w-2xl lg:max-w-md xl:max-w-lg 2xl:max-w-xl 3xl:max-w-2xl 4xl:max-w-4xl grid grid-cols-2 gap-3 md:gap-4 lg:gap-2 3xl:gap-4'
           >
             {portfolioImages.map((image, i) => (
-              <div 
+              <div
                 key={i}
                 onClick={() => {
                   setIndex(i);
@@ -120,7 +123,6 @@ export default function Portfolio() {
               </div>
             ))}
           </div>
-
         </div>
       </div>
 
@@ -130,7 +132,6 @@ export default function Portfolio() {
         close={() => setOpen(false)}
         index={index}
         slides={slides}
-        // {/* 3. Pass our custom component function here */}
         render={{ slide: NextJsImage }}
         styles={{
           container: { backgroundColor: 'rgba(0, 0, 0, 0.9)' },
