@@ -10,11 +10,6 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 
 // Project Portfolio Assets
-import Image1 from '../../img/portfolio/1.png';
-import Image2 from '../../img/portfolio/2.png';
-import Image3 from '../../img/portfolio/3.png';
-import Image4 from '../../img/portfolio/4.png';
-
 import { transition1 } from '../../transitions';
 import { CursorContext } from '../../context/CursorContext';
 
@@ -47,10 +42,22 @@ export default function Portfolio() {
   const [index, setIndex] = useState(0);
 
   const portfolioImages = [
-    { src: Image1, alt: 'portfolio 1' },
-    { src: Image2, alt: 'portfolio 2' },
-    { src: Image3, alt: 'portfolio 3' },
-    { src: Image4, alt: 'portfolio 4' },
+    {
+      src: 'https://images.unsplash.com/photo-1488716820095-cbe80883c496?q=80&w=986&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Editorial Portrait - Fine Art',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1506634572416-48cdfe530110?q=80&w=1000&auto=format&fit=crop',
+      alt: 'Contemporary Fashion - Studio',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop',
+      alt: 'Lifestyle Photography - Urban',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1515698919056-f76accf3d938?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Cinematic Moment - Natural Light',
+    },
   ];
 
   // Map files directly into slide configurations
@@ -111,12 +118,14 @@ export default function Portfolio() {
                   setIndex(i);
                   setOpen(true);
                 }}
-                className='relative w-full aspect-[4/3] bg-accent overflow-hidden shadow-sm rounded-sm cursor-pointer group'
+                className='relative w-full aspect-[3/4] bg-accent overflow-hidden shadow-sm rounded-sm cursor-pointer group'
               >
                 <Image
                   className='object-cover w-full h-full group-hover:scale-110 transition-all duration-500'
                   src={image.src}
                   alt={image.alt}
+                  fill
+                  sizes='(max-width: 768px) 50vw, 25vw'
                   priority={i < 2}
                 />
                 <div className='absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300' />

@@ -5,12 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-import WomanImg from '../../img/about/woman.png';
 import { transition1 } from '../../transitions';
 import { CursorContext } from '../../context/CursorContext';
 
 export default function About() {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  const aboutImg =
+    'https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=1000&auto=format&fit=crop';
 
   return (
     <motion.section
@@ -30,8 +31,10 @@ export default function About() {
           {/* image container */}
           <div className='w-full lg:w-1/2 max-w-md md:max-w-2xl lg:max-w-md xl:max-w-lg 2xl:max-w-xl 3xl:max-w-2xl 4xl:max-w-4xl order-2 lg:order-0 overflow-hidden shadow-sm rounded-sm'>
             <Image
-              src={WomanImg}
+              src={aboutImg}
               alt='about woman'
+              width={1000}
+              height={1500}
               priority
               className='w-full h-auto object-cover'
             />

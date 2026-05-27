@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-import WomanImg from '../../img/contact/woman.png';
+import WomanImg from '../../img/contact/contact_me.png';
 import { transition1 } from '../../transitions';
 import { CursorContext } from '../../context/CursorContext';
 

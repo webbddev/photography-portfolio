@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-import WomanImg from '../img/home/woman.png';
+import WomanImg from '../img/home/hero_image.png';
 import { transition1 } from '../transitions';
 import { CursorContext } from '../context/CursorContext';
 
